@@ -6,6 +6,7 @@ MODIFICATION LOG:
 Ver      Date        Author        Description
 -----   ----------   -----------   -------------------------------------------------------------------------------
 1.0     08/02/2019   JJAUSSI       1. Built this table for LDS BC IT240
+1.1     10/27/2019   JJAUSSI       1. Added fact table load for LDS BC IT243
 
 
 RUNTIME: 
@@ -99,9 +100,37 @@ SELECT DISTINCT
      , d.t_code
   FROM dbo.tblData d
  ORDER BY d.t_id;
+ 
 
 
+-- 4) Load the Player Fact table
 
+SELECT p.pl_id 
+     , FLOOR(RAND(CHECKSUM(NEWID()))*(200000-10000+1)+10000) as mtd_salary
+	 INTO #TempTable
+  FROM dbo.tblPlayerDim AS p;
 
+WITH s1
+AS
+(
+SELECT '2019-12-31' as as_of_date UNION
+SELECT '2019-11-30' as as_of_date UNION
+SELECT '2019-10-31' as as_of_date UNION
+SELECT '2019-09-30' as as_of_date UNION
+SELECT '2019-08-31' as as_of_date UNION
+SELECT '2019-07-31' as as_of_date UNION
+SELECT '2019-06-30' as as_of_date UNION
+SELECT '2019-05-31' as as_of_date UNION
+SELECT '2019-04-30' as as_of_date UNION
+SELECT '2019-03-31' as as_of_date UNION
+SELECT '2019-02-28' as as_of_date UNION
+SELECT '2019-01-31' as as_of_date
+)
+INSERT INTO dbo.tblPlayerFact
+SELECT s1.as_of_date
+     , t.pl_id
+	 , t.mtd_salary
+  FROM s1 CROSS JOIN #TempTable AS t
+ ORDER BY 1, 2;
 
-
+DROP TABLE #TempTable;

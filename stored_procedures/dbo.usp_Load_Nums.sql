@@ -1,11 +1,11 @@
 USE [EXM]
 GO
 
-/****** Object:  StoredProcedure [dbo].[usp_Load_Nums]    Script Date: 11/11/2019 10:47:35 AM ******/
+/****** Object:  StoredProcedure [dbo].[usp_Load_Nums]    Script Date: 11/17/2019 10:54:42 AM ******/
 DROP PROCEDURE [dbo].[usp_Load_Nums]
 GO
 
-/****** Object:  StoredProcedure [dbo].[usp_Load_Nums]    Script Date: 11/11/2019 10:47:35 AM ******/
+/****** Object:  StoredProcedure [dbo].[usp_Load_Nums]    Script Date: 11/17/2019 10:54:42 AM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -13,8 +13,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-
-CREATE PROCEDURE [dbo].[usp_Load_Nums]
+CREATE PROCEDURE [dbo].[usp_Load_Nums] (@v_num as BIGINT)
 AS
 
 /*****************************************************************************************************************
@@ -45,7 +44,6 @@ Example use cases...
 These links have more details...
 https://dba.stackexchange.com/questions/11506/why-are-numbers-tables-invaluable
 http://sqlblog.com/blogs/aaron_bertrand/archive/2009/10/07/bad-habits-to-kick-using-a-loop-to-populate-a-table.aspx
-
 
 
 LICENSE: 
@@ -84,7 +82,7 @@ distributed under the same license terms.
 
         SET @n = 1;
 
-        WHILE @n <= 1000000
+        WHILE @n <= @v_num
             BEGIN
                 INSERT INTO dbo.Nums(n)
                 VALUES

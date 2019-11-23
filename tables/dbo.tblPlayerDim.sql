@@ -48,3 +48,8 @@ CREATE TABLE [dbo].[tblPlayerDim](
 GO
 
 
+ALTER TABLE dbo.tblPlayerDim
+ADD CONSTRAINT FK_tblPlayerDim_tblPositionDim FOREIGN KEY(p_id) REFERENCES dbo.tblPositionDim(p_id);
+
+ALTER TABLE dbo.tblPlayerDim
+ADD CONSTRAINT FK_tblPlayerDim_tblTeamDim FOREIGN KEY(t_id) REFERENCES dbo.tblTeamDim(t_id);

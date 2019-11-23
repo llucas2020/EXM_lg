@@ -48,3 +48,5 @@ CREATE TABLE [dbo].[tblPlayerFact](
 GO
 
 
+ALTER TABLE dbo.tblPlayerFact
+ADD CONSTRAINT FK_tblPlayerFact_tblPlayerDim FOREIGN KEY(pl_id) REFERENCES dbo.tblPlayerDim(pl_id);

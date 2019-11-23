@@ -23,7 +23,52 @@ distributed under the same license terms.
 ******************************************************************************************************************/
 
 
--- 1) Create the Player Dimension table
+-- 1) Drop contraints
+
+IF EXISTS
+(
+    SELECT fk.*
+      FROM sys.foreign_keys AS fk
+     WHERE fk.name = 'FK_tblPlayerDim_tblPositionDim'
+           AND parent_object_id = OBJECT_ID(N'dbo.tblPlayerDim')
+)
+    BEGIN
+
+        ALTER TABLE dbo.tblPlayerDim DROP CONSTRAINT FK_tblPlayerDim_tblPositionDim;
+
+END;
+
+
+IF EXISTS
+(
+    SELECT fk.*
+      FROM sys.foreign_keys AS fk
+     WHERE fk.name = 'FK_tblPlayerDim_tblTeamDim'
+           AND parent_object_id = OBJECT_ID(N'dbo.tblPlayerDim')
+)
+    BEGIN
+
+        ALTER TABLE dbo.tblPlayerDim DROP CONSTRAINT FK_tblPlayerDim_tblTeamDim;
+
+END;
+
+
+IF EXISTS
+(
+    SELECT fk.*
+      FROM sys.foreign_keys AS fk
+     WHERE fk.name = 'FK_tblPlayerFact_tblPlayerDim'
+           AND parent_object_id = OBJECT_ID(N'dbo.tblPlayerFact')
+)
+    BEGIN
+
+        ALTER TABLE dbo.tblPlayerFact DROP CONSTRAINT FK_tblPlayerFact_tblPlayerDim;
+
+END;
+
+
+
+-- 2) Create the Player Dimension table
 
 --SELECT DISTINCT
 --       d.pl_id
@@ -55,7 +100,7 @@ SELECT DISTINCT
 
 
 
--- 2) Create the Position Dimension table
+-- 3) Create the Position Dimension table
 
 --SELECT DISTINCT
 --       d.p_id
@@ -81,7 +126,7 @@ SELECT DISTINCT
 
 
 
--- 3) Create the Team Dimension table
+-- 4) Create the Team Dimension table
 
 --SELECT DISTINCT
 --       d.t_id
@@ -103,7 +148,9 @@ SELECT DISTINCT
  
 
 
--- 4) Load the Player Fact table
+-- 5) Load the Player Fact table
+
+TRUNCATE TABLE dbo.tblPlayerFact;
 
 SELECT p.pl_id 
      , FLOOR(RAND(CHECKSUM(NEWID()))*(200000-10000+1)+10000) as mtd_salary
@@ -134,3 +181,16 @@ SELECT s1.as_of_date
  ORDER BY 1, 2;
 
 DROP TABLE #TempTable;
+
+
+
+-- 6) Add contraints
+
+ALTER TABLE dbo.tblPlayerDim
+ADD CONSTRAINT FK_tblPlayerDim_tblPositionDim FOREIGN KEY(p_id) REFERENCES dbo.tblPositionDim(p_id);
+
+ALTER TABLE dbo.tblPlayerDim
+ADD CONSTRAINT FK_tblPlayerDim_tblTeamDim FOREIGN KEY(t_id) REFERENCES dbo.tblTeamDim(t_id);
+
+ALTER TABLE dbo.tblPlayerFact
+ADD CONSTRAINT FK_tblPlayerFact_tblPlayerDim FOREIGN KEY(pl_id) REFERENCES dbo.tblPlayerDim(pl_id);

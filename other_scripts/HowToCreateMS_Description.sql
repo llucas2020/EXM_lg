@@ -32,7 +32,7 @@ distributed under the same license terms.
 
 SELECT t.TABLE_SCHEMA, t.TABLE_NAME
 ,'EXEC sys.sp_addextendedproperty @name=N''MS_Description'', 
-@value=N''The Position Dimension table.'' , 
+@value=N''Mytable description.'' , 
 @level0type=N''SCHEMA'',@level0name=N''dbo'', 
 @level1type=N''TABLE'',@level1name=N''' + t.TABLE_NAME + ''';' 
 as sql1
@@ -50,6 +50,7 @@ as sql1
 
 -- Table
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The Position Dimension table.' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'tblPositionDim';
+
 
 -- Columns
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Primary key for Position records.' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'tblPositionDim', @level2type=N'COLUMN',@level2name=N'p_id';

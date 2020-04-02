@@ -52,6 +52,14 @@ the freedom to run, study, share, and modify the code. This license grants the r
 of the code the rights of the Free Software Definition. All derivative work can only be
 distributed under the same license terms.
  
+
+Example usage...
+
+EXEC dbo.usp_Load_Nums 12345;
+
+SELECT n.*
+  FROM dbo.Nums as n;
+   
 ******************************************************************************************************************/
 
     BEGIN

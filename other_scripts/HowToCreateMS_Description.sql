@@ -7,6 +7,7 @@ Ver      Date        Author        Description
 -----   ----------   -----------   -------------------------------------------------------------------------------
 1.0     11/03/2019   JJAUSSI       1. Built this table for LDS BC IT243
 1.1     01/29/2020   JJAUSSI       1. Enhanced example
+1.1     04/10/2020   JJAUSSI       1. Refined script formatting
 
 
 RUNTIME: 
@@ -30,16 +31,18 @@ distributed under the same license terms.
 
 -- This example is for the Tables
 
-SELECT t.TABLE_SCHEMA, t.TABLE_NAME
+SELECT t.TABLE_SCHEMA 
+      ,t.TABLE_NAME
 ,'EXEC sys.sp_addextendedproperty @name=N''MS_Description'', 
-@value=N''Mytable description.'' , 
+@value=N''The Position Dimension table.'' , 
 @level0type=N''SCHEMA'',@level0name=N''dbo'', 
 @level1type=N''TABLE'',@level1name=N''' + t.TABLE_NAME + ''';' 
 as sql1
   FROM INFORMATION_SCHEMA.TABLES as t
  WHERE t.TABLE_TYPE = 'BASE TABLE'
    AND t.TABLE_SCHEMA = 'dbo'
- ORDER BY t.TABLE_NAME;
+ORDER BY 1,2;
+
 
  -- Adapt the script above to use INFORMATION_SCHEMA.COLUMNS for the Columns
 
@@ -57,4 +60,3 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Primary key fo
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A one character abbreviation for the Position.' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'tblPositionDim', @level2type=N'COLUMN',@level2name=N'p_code';
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Full word verbiage of the Position name.' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'tblPositionDim', @level2type=N'COLUMN',@level2name=N'p_name';
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The targeted talent inventory level for this position per team.' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'tblPositionDim', @level2type=N'COLUMN',@level2name=N'p_target';
-

@@ -7,6 +7,8 @@ Ver      Date        Author        Description
 -----   ----------   -----------   -------------------------------------------------------------------------------
 1.0     08/02/2019   JJAUSSI       1. Built this table for LDS BC IT240
 1.1     10/27/2019   JJAUSSI       1. Added fact table load for LDS BC IT243
+1.2     05/06/2020   JJAUSSI       1. Added Team Name
+1.3     05/11/2020   JJAUSSI       1. Added dynamic column for Team Name
 
 
 RUNTIME: 
@@ -139,10 +141,32 @@ SELECT DISTINCT
 
 TRUNCATE TABLE dbo.tblTeamDim;
 
+IF NOT EXISTS
+(
+    SELECT c.*
+      FROM INFORMATION_SCHEMA.COLUMNS AS c
+     WHERE c.COLUMN_NAME = 't_name'
+           AND c.TABLE_NAME = 'tblTeamDim'
+		   AND c.TABLE_SCHEMA = 'dbo'
+)
+    BEGIN
+
+        ALTER TABLE dbo.tblTeamDim ADD t_name varchar(50) NULL;
+
+END;
+
 INSERT INTO dbo.tblTeamDim
 SELECT DISTINCT
        d.t_id
      , d.t_code
+	  , CASE WHEN LEFT(d.t_code, 1) = 'U'
+	        THEN 'Barcelona - Under ' + CAST(
+	        								CAST(
+	        									RIGHT(d.t_code, 2) 
+	        									as int) 
+	        								as varchar(2)) + ' Squad'
+			ELSE 'Barcelona - Senior Squad'
+			END as t_name
   FROM dbo.tblData d
  ORDER BY d.t_id;
  

@@ -2,19 +2,22 @@
 <DataProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
   <ProfileVersion>1.0</ProfileVersion>
   <DataSources>
-    <DtsDataSource ID="{79F85202-39C3-4B09-AF89-49465AAB8109}" Name="(local).EXM">
+    <DtsDataSource ID="{662B6D26-3316-4FD7-8F40-1EF93729E61B}" Name="(local).EXM">
       <DtsConnectionManagerID>(local).EXM</DtsConnectionManagerID>
     </DtsDataSource>
-    <DtsDataSource ID="{46B27D74-7E96-4FFF-809C-D817CA3317B6}" Name="DATA.txt">
-      <DtsConnectionManagerID>DATA.txt</DtsConnectionManagerID>
+    <DtsDataSource ID="{99DB5AB6-8206-484A-982F-EE481B30B18F}" Name="Data">
+      <DtsConnectionManagerID>Data</DtsConnectionManagerID>
     </DtsDataSource>
-    <DtsDataSource ID="{EB665472-DA78-41FC-B1BF-8CC4CFB677B5}" Name="EXM">
+    <DtsDataSource ID="{A41F6B9C-30FF-4625-A58D-A4FC7A03136A}" Name="DFNB3">
+      <DtsConnectionManagerID>DFNB3</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{9E9C311D-89AC-4AA0-B591-FAACCE57FFEC}" Name="EXM">
       <DtsConnectionManagerID>EXM</DtsConnectionManagerID>
     </DtsDataSource>
-    <DtsDataSource ID="{D80562A1-F500-47D6-8D30-EF2060A50942}" Name="EXM.dbo.tblData_profile.xml">
+    <DtsDataSource ID="{3F810993-E6FA-4729-929D-384041FD03B1}" Name="EXM.dbo.tblData_profile.xml">
       <DtsConnectionManagerID>EXM.dbo.tblData_profile.xml</DtsConnectionManagerID>
     </DtsDataSource>
-    <DtsDataSource ID="{ABD86E70-C1AC-471E-8C20-96EFB88E73FD}" Name="SSIS_PDS">
+    <DtsDataSource ID="{8865F152-2C71-4A55-8336-E570358CF819}" Name="SSIS_PDS">
       <DtsConnectionManagerID>SSIS_PDS</DtsConnectionManagerID>
     </DtsDataSource>
   </DataSources>
@@ -23,31 +26,31 @@
     <Timeout>0</Timeout>
     <Requests>
       <ColumnNullRatioProfileRequest ID="NullRatioReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table Schema="dbo" Table="tblData" />
         <Column IsWildCard="true" />
       </ColumnNullRatioProfileRequest>
       <ColumnStatisticsProfileRequest ID="StatisticsReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table Schema="dbo" Table="tblData" />
         <Column IsWildCard="true" />
       </ColumnStatisticsProfileRequest>
       <ColumnLengthDistributionProfileRequest ID="LengthDistReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table Schema="dbo" Table="tblData" />
         <Column IsWildCard="true" />
         <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
         <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
       </ColumnLengthDistributionProfileRequest>
       <ColumnValueDistributionProfileRequest ID="ValueDistReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table Schema="dbo" Table="tblData" />
         <Column IsWildCard="true" />
         <Option>FrequentValues</Option>
         <FrequentValueThreshold>0.001</FrequentValueThreshold>
       </ColumnValueDistributionProfileRequest>
       <CandidateKeyProfileRequest ID="KeyReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table Schema="dbo" Table="tblData" />
         <KeyColumns>
           <Column IsWildCard="true" />
@@ -58,7 +61,7 @@
         <MaxNumberOfViolations>100</MaxNumberOfViolations>
       </CandidateKeyProfileRequest>
       <FunctionalDependencyProfileRequest ID="FDReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table Schema="dbo" Table="tblData" />
         <DeterminantColumns>
           <Column IsWildCard="true" />
@@ -74,73 +77,73 @@
   <DataProfileOutput>
     <Profiles>
       <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="-1" />
         <Column Name="pl_id" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
         <NullCount>0</NullCount>
       </ColumnNullRatioProfile>
       <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="-1" />
         <Column Name="l_name" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
         <NullCount>0</NullCount>
       </ColumnNullRatioProfile>
       <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="-1" />
         <Column Name="f_name" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
         <NullCount>0</NullCount>
       </ColumnNullRatioProfile>
       <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="-1" />
         <Column Name="pl_name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
         <NullCount>0</NullCount>
       </ColumnNullRatioProfile>
       <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="-1" />
         <Column Name="t_id" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
         <NullCount>0</NullCount>
       </ColumnNullRatioProfile>
       <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="-1" />
         <Column Name="p_id" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
         <NullCount>0</NullCount>
       </ColumnNullRatioProfile>
       <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="-1" />
         <Column Name="pl_num" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
         <NullCount>0</NullCount>
       </ColumnNullRatioProfile>
       <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="-1" />
         <Column Name="p_code" SqlDbType="VarChar" MaxLength="5" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
         <NullCount>0</NullCount>
       </ColumnNullRatioProfile>
       <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="-1" />
         <Column Name="p_name" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
         <NullCount>0</NullCount>
       </ColumnNullRatioProfile>
       <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="-1" />
         <Column Name="p_target" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
         <NullCount>0</NullCount>
       </ColumnNullRatioProfile>
       <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="-1" />
         <Column Name="t_code" SqlDbType="VarChar" MaxLength="5" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
         <NullCount>0</NullCount>
       </ColumnNullRatioProfile>
       <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <Column Name="pl_id" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
         <MinValue>1</MinValue>
@@ -149,7 +152,7 @@
         <StdDev>101.035884714293</StdDev>
       </ColumnStatisticsProfile>
       <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <Column Name="t_id" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
         <MinValue>1</MinValue>
@@ -158,7 +161,7 @@
         <StdDev>4.02644726167131</StdDev>
       </ColumnStatisticsProfile>
       <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <Column Name="p_id" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
         <MinValue>1</MinValue>
@@ -167,7 +170,7 @@
         <StdDev>1.1222026445835</StdDev>
       </ColumnStatisticsProfile>
       <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <Column Name="pl_num" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
         <MinValue>1</MinValue>
@@ -176,7 +179,7 @@
         <StdDev>27.6150330251403</StdDev>
       </ColumnStatisticsProfile>
       <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <Column Name="p_target" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
         <MinValue>3</MinValue>
@@ -185,7 +188,7 @@
         <StdDev>2.18502510142963</StdDev>
       </ColumnStatisticsProfile>
       <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <Column Name="l_name" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
         <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
@@ -220,7 +223,7 @@
         </LengthDistribution>
       </ColumnLengthDistributionProfile>
       <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <Column Name="f_name" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
         <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
@@ -255,7 +258,7 @@
         </LengthDistribution>
       </ColumnLengthDistributionProfile>
       <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <Column Name="pl_name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
         <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
@@ -310,7 +313,7 @@
         </LengthDistribution>
       </ColumnLengthDistributionProfile>
       <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <Column Name="p_code" SqlDbType="VarChar" MaxLength="5" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
         <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
@@ -325,7 +328,7 @@
         </LengthDistribution>
       </ColumnLengthDistributionProfile>
       <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <Column Name="p_name" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
         <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
@@ -348,7 +351,7 @@
         </LengthDistribution>
       </ColumnLengthDistributionProfile>
       <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <Column Name="t_code" SqlDbType="VarChar" MaxLength="5" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
         <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
@@ -367,7 +370,7 @@
         </LengthDistribution>
       </ColumnLengthDistributionProfile>
       <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <KeyColumns>
           <Column Name="pl_id" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -375,7 +378,7 @@
         <IsExactKey>true</IsExactKey>
       </CandidateKeyProfile>
       <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <Column Name="pl_id" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
         <NumberOfDistinctValues>350</NumberOfDistinctValues>
@@ -1783,7 +1786,7 @@
         </ValueDistribution>
       </ColumnValueDistributionProfile>
       <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <Column Name="l_name" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
         <NumberOfDistinctValues>14</NumberOfDistinctValues>
@@ -1847,7 +1850,7 @@
         </ValueDistribution>
       </ColumnValueDistributionProfile>
       <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <Column Name="f_name" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
         <NumberOfDistinctValues>25</NumberOfDistinctValues>
@@ -1955,7 +1958,7 @@
         </ValueDistribution>
       </ColumnValueDistributionProfile>
       <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <KeyColumns>
           <Column Name="pl_name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -1963,7 +1966,7 @@
         <IsExactKey>true</IsExactKey>
       </CandidateKeyProfile>
       <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <Column Name="pl_name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
         <NumberOfDistinctValues>350</NumberOfDistinctValues>
@@ -3371,7 +3374,7 @@
         </ValueDistribution>
       </ColumnValueDistributionProfile>
       <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <Column Name="t_id" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
         <NumberOfDistinctValues>14</NumberOfDistinctValues>
@@ -3435,7 +3438,7 @@
         </ValueDistribution>
       </ColumnValueDistributionProfile>
       <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <Column Name="p_id" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
         <NumberOfDistinctValues>4</NumberOfDistinctValues>
@@ -3459,7 +3462,7 @@
         </ValueDistribution>
       </ColumnValueDistributionProfile>
       <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <Column Name="pl_num" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
         <NumberOfDistinctValues>96</NumberOfDistinctValues>
@@ -3851,7 +3854,7 @@
         </ValueDistribution>
       </ColumnValueDistributionProfile>
       <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <Column Name="p_code" SqlDbType="VarChar" MaxLength="5" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
         <NumberOfDistinctValues>4</NumberOfDistinctValues>
@@ -3875,7 +3878,7 @@
         </ValueDistribution>
       </ColumnValueDistributionProfile>
       <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <Column Name="p_name" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
         <NumberOfDistinctValues>4</NumberOfDistinctValues>
@@ -3899,7 +3902,7 @@
         </ValueDistribution>
       </ColumnValueDistributionProfile>
       <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <Column Name="p_target" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
         <NumberOfDistinctValues>4</NumberOfDistinctValues>
@@ -3923,7 +3926,7 @@
         </ValueDistribution>
       </ColumnValueDistributionProfile>
       <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <Column Name="t_code" SqlDbType="VarChar" MaxLength="5" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
         <NumberOfDistinctValues>14</NumberOfDistinctValues>
@@ -3987,7 +3990,7 @@
         </ValueDistribution>
       </ColumnValueDistributionProfile>
       <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <DeterminantColumns>
           <Column Name="pl_name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -3996,7 +3999,7 @@
         <IsExactFD>true</IsExactFD>
       </FunctionalDependencyProfile>
       <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <DeterminantColumns>
           <Column Name="pl_id" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -4005,7 +4008,7 @@
         <IsExactFD>true</IsExactFD>
       </FunctionalDependencyProfile>
       <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <DeterminantColumns>
           <Column Name="pl_name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -4014,7 +4017,7 @@
         <IsExactFD>true</IsExactFD>
       </FunctionalDependencyProfile>
       <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <DeterminantColumns>
           <Column Name="pl_id" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -4023,7 +4026,7 @@
         <IsExactFD>true</IsExactFD>
       </FunctionalDependencyProfile>
       <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <DeterminantColumns>
           <Column Name="pl_name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -4032,7 +4035,7 @@
         <IsExactFD>true</IsExactFD>
       </FunctionalDependencyProfile>
       <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <DeterminantColumns>
           <Column Name="pl_id" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -4041,7 +4044,7 @@
         <IsExactFD>true</IsExactFD>
       </FunctionalDependencyProfile>
       <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <DeterminantColumns>
           <Column Name="pl_name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -4050,7 +4053,7 @@
         <IsExactFD>true</IsExactFD>
       </FunctionalDependencyProfile>
       <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <DeterminantColumns>
           <Column Name="pl_id" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -4059,7 +4062,7 @@
         <IsExactFD>true</IsExactFD>
       </FunctionalDependencyProfile>
       <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <DeterminantColumns>
           <Column Name="pl_name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -4068,7 +4071,7 @@
         <IsExactFD>true</IsExactFD>
       </FunctionalDependencyProfile>
       <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <DeterminantColumns>
           <Column Name="pl_id" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -4077,7 +4080,7 @@
         <IsExactFD>true</IsExactFD>
       </FunctionalDependencyProfile>
       <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <DeterminantColumns>
           <Column Name="pl_name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -4086,7 +4089,7 @@
         <IsExactFD>true</IsExactFD>
       </FunctionalDependencyProfile>
       <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <DeterminantColumns>
           <Column Name="pl_id" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -4095,7 +4098,7 @@
         <IsExactFD>true</IsExactFD>
       </FunctionalDependencyProfile>
       <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <DeterminantColumns>
           <Column Name="pl_name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -4104,7 +4107,7 @@
         <IsExactFD>true</IsExactFD>
       </FunctionalDependencyProfile>
       <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <DeterminantColumns>
           <Column Name="pl_id" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -4113,7 +4116,7 @@
         <IsExactFD>true</IsExactFD>
       </FunctionalDependencyProfile>
       <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <DeterminantColumns>
           <Column Name="pl_id" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -4122,7 +4125,7 @@
         <IsExactFD>true</IsExactFD>
       </FunctionalDependencyProfile>
       <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <DeterminantColumns>
           <Column Name="pl_name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -4131,7 +4134,7 @@
         <IsExactFD>true</IsExactFD>
       </FunctionalDependencyProfile>
       <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <DeterminantColumns>
           <Column Name="pl_id" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -4140,7 +4143,7 @@
         <IsExactFD>true</IsExactFD>
       </FunctionalDependencyProfile>
       <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <DeterminantColumns>
           <Column Name="pl_name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -4149,7 +4152,7 @@
         <IsExactFD>true</IsExactFD>
       </FunctionalDependencyProfile>
       <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <DeterminantColumns>
           <Column Name="pl_id" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -4158,7 +4161,7 @@
         <IsExactFD>true</IsExactFD>
       </FunctionalDependencyProfile>
       <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <DeterminantColumns>
           <Column Name="pl_name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -4167,7 +4170,7 @@
         <IsExactFD>true</IsExactFD>
       </FunctionalDependencyProfile>
       <FunctionalDependencyProfile IsExact="true" ProfileRequestID="FDReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <DeterminantColumns>
           <Column Name="t_code" SqlDbType="VarChar" MaxLength="5" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -4176,7 +4179,7 @@
         <IsExactFD>true</IsExactFD>
       </FunctionalDependencyProfile>
       <FunctionalDependencyProfile IsExact="true" ProfileRequestID="FDReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <DeterminantColumns>
           <Column Name="t_id" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -4185,7 +4188,7 @@
         <IsExactFD>true</IsExactFD>
       </FunctionalDependencyProfile>
       <FunctionalDependencyProfile IsExact="true" ProfileRequestID="FDReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <DeterminantColumns>
           <Column Name="p_target" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -4194,7 +4197,7 @@
         <IsExactFD>true</IsExactFD>
       </FunctionalDependencyProfile>
       <FunctionalDependencyProfile IsExact="true" ProfileRequestID="FDReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <DeterminantColumns>
           <Column Name="p_name" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -4203,7 +4206,7 @@
         <IsExactFD>true</IsExactFD>
       </FunctionalDependencyProfile>
       <FunctionalDependencyProfile IsExact="true" ProfileRequestID="FDReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <DeterminantColumns>
           <Column Name="p_target" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -4212,7 +4215,7 @@
         <IsExactFD>true</IsExactFD>
       </FunctionalDependencyProfile>
       <FunctionalDependencyProfile IsExact="true" ProfileRequestID="FDReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <DeterminantColumns>
           <Column Name="p_code" SqlDbType="VarChar" MaxLength="5" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -4221,7 +4224,7 @@
         <IsExactFD>true</IsExactFD>
       </FunctionalDependencyProfile>
       <FunctionalDependencyProfile IsExact="true" ProfileRequestID="FDReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <DeterminantColumns>
           <Column Name="p_target" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -4230,7 +4233,7 @@
         <IsExactFD>true</IsExactFD>
       </FunctionalDependencyProfile>
       <FunctionalDependencyProfile IsExact="true" ProfileRequestID="FDReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <DeterminantColumns>
           <Column Name="p_id" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -4239,7 +4242,7 @@
         <IsExactFD>true</IsExactFD>
       </FunctionalDependencyProfile>
       <FunctionalDependencyProfile IsExact="true" ProfileRequestID="FDReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <DeterminantColumns>
           <Column Name="p_name" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -4248,7 +4251,7 @@
         <IsExactFD>true</IsExactFD>
       </FunctionalDependencyProfile>
       <FunctionalDependencyProfile IsExact="true" ProfileRequestID="FDReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <DeterminantColumns>
           <Column Name="p_code" SqlDbType="VarChar" MaxLength="5" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -4257,7 +4260,7 @@
         <IsExactFD>true</IsExactFD>
       </FunctionalDependencyProfile>
       <FunctionalDependencyProfile IsExact="true" ProfileRequestID="FDReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <DeterminantColumns>
           <Column Name="p_name" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -4266,7 +4269,7 @@
         <IsExactFD>true</IsExactFD>
       </FunctionalDependencyProfile>
       <FunctionalDependencyProfile IsExact="true" ProfileRequestID="FDReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <DeterminantColumns>
           <Column Name="p_id" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -4275,7 +4278,7 @@
         <IsExactFD>true</IsExactFD>
       </FunctionalDependencyProfile>
       <FunctionalDependencyProfile IsExact="true" ProfileRequestID="FDReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <DeterminantColumns>
           <Column Name="p_code" SqlDbType="VarChar" MaxLength="5" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="false" StringCompareOptions="0" />
@@ -4284,7 +4287,7 @@
         <IsExactFD>true</IsExactFD>
       </FunctionalDependencyProfile>
       <FunctionalDependencyProfile IsExact="true" ProfileRequestID="FDReq">
-        <DataSourceID>{79F85202-39C3-4B09-AF89-49465AAB8109}</DataSourceID>
+        <DataSourceID>{662B6D26-3316-4FD7-8F40-1EF93729E61B}</DataSourceID>
         <Table DataSource="(local)" Database="EXM" Schema="dbo" Table="tblData" RowCount="350" />
         <DeterminantColumns>
           <Column Name="p_id" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="false" StringCompareOptions="0" />
